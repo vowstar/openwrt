@@ -17,4 +17,4 @@ TOOLS=""
 UTILS="bash lsof shadow-useradd vim-fuller"
 REMOVE=""
 
-make image PACKAGES="$ADMIN $BASE $DOCKER $HARDWARE $FS $LUCI $NET $SYS $TOOLS $UTILS $REMOVE" V=s
+make -j $((1+`nproc`)) PACKAGES="$ADMIN $BASE $DOCKER $HARDWARE $FS $LUCI $NET $SYS $TOOLS $UTILS $REMOVE" V=s
