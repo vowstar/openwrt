@@ -3,6 +3,10 @@
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+if [ -f ".config" ]; then
+    echo ".config exists."
+    make clean
+fi
 make clean
 cp -f config.default .config
 yes "" | make oldconfig
