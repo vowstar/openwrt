@@ -99,6 +99,7 @@ define KernelPackage/nf-conntrack
 	$(KCONFIG_NF_CONNTRACK)
   FILES:=$(foreach mod,$(NF_CONNTRACK-m),$(LINUX_DIR)/net/$(mod).ko)
   AUTOLOAD:=$(call AutoProbe,$(notdir $(NF_CONNTRACK-m)))
+  DEPENDS:=+kmod-lib-crc32c
 endef
 
 define KernelPackage/nf-conntrack/install
